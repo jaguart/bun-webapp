@@ -9,8 +9,8 @@
 
 import { Elysia } from "elysia";
 import { api } from "./api/api";
-import { requestLogger } from "./app/logger";
 import { pub } from "./app/public";
+import { requestLogger } from "./app/reqlog";
 import { config } from "./config";
 import { logger } from "./infra/logger";
 

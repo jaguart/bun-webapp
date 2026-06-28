@@ -3,7 +3,7 @@
 */
 
 import type { Elysia } from "elysia";
-import { appMeta } from "../infra/app-meta";
+import { appMeta } from "../app/meta";
 import { appDate } from "../infra/date";
 
 export const metaRoutes = (app: Elysia) =>
