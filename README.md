@@ -5,9 +5,15 @@ A full-stack web app template using Bun, Elysia, SQLite, and Svelte 5 (or Vue 3)
 ```bash
 bun create jaguart/bun-webapp my-app
 cd my-app
-bun install
-bun run setup    # prompts for app name, author, homepage; inits DB
+bun bin/seed-user.ts --name "Your Name" --email you@example.com --password secret
+bun run dev
 ```
+
+`bun create` runs `create.ts` automatically after scaffolding, which:
+- prompts for app name, description, author, and homepage
+- updates `package.json` and resets the version to `0.0.1`
+- copies `.env.example` → `.env`
+- initialises the SQLite database
 
 > If you fork this template, update `repository` in `package.json` to point at your own repo.
 
@@ -23,10 +29,11 @@ bun run setup    # prompts for app name, author, homepage; inits DB
 ## Quick start
 
 ```bash
-bun run setup    # prompts for name/author/homepage, copies .env, inits DB
 bun bin/seed-user.ts --name "Your Name" --email you@example.com --password secret
 bun run dev      # API :3000  +  Vite HMR :5173
 ```
+
+To re-run setup at any time (e.g. after cloning directly): `bun run setup`
 
 ## Scripts
 

@@ -38,7 +38,7 @@ const author     = await prompt("Author (name <email>)", pkg.author    || "");
 const homepage   = await prompt("Homepage URL",         pkg.homepage   || "");
 
 pkg.name        = appName;
-pkg.version     = "0.1.0";
+pkg.version     = "0.0.1";
 pkg.description = description;
 pkg.author      = author;
 pkg.homepage    = homepage;
