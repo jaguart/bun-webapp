@@ -1,0 +1,129 @@
+html,
+
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+  font-family: avenir next, helvetica neue, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
+}
+
+.box {
+  color: rgba(74, 74, 74, .9);
+  background-color: #fff;
+  padding: 1.5em;
+  width: 30em;
+  letter-spacing: 1px;
+  position: relative;
+  top: -3em;
+}
+
+.meta {
+  position: fixed;
+  bottom: 1.2em;
+  right: 1em;
+
+  font-family: monospace;
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  z-index: 9999;
+  /* vertical-align: middle; */
+}
+
+.shade {
+  box-shadow: 0 1em 4em 0 rgba(0, 0, 0, .06);
+}
+
+.error-box {
+  margin-top: 1.25em;
+  color: darkred;
+}
+
+.error-header {
+  margin-bottom: 0.64em;
+}
+
+.error-body {
+  font-size: small;
+}
+
+.box>h1 {
+  color: black;
+  margin-top: 0.64em;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  padding: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.row:hover {
+  background-color: lightgray;
+}
+
+.text {
+  flex-grow: 1;
+  align-self: center;
+}
+
+.text.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.done-wrapper {
+  margin-right: 0.75em;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-wrapper {
+  margin-left: 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.2em;
+  height: 1.2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-wrapper input[type="checkbox"]::after {
+  content: '🗑';
+  font-size: 2em;
+  opacity: 0.50;
+}
+
+.checkbox-wrapper input[type="checkbox"]:hover::after {
+  opacity: 1;
+}
+
+.row:last-of-type {
+  border-bottom: none;
+}
+
+.row:last-of-type:hover {
+  background-color: initial;
+}
+
+.text-input {
+  flex-grow: 1;
+  padding: 0.64em;
+}

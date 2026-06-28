@@ -1,0 +1,26 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# env configuration
+.env.*
+
+# testing, production, dynamic storage, temp
+/coverage
+/build
+/var/
+/tmp/
+
+# dependencies
+/node_modules
+
+# bun install instead of npm
+# run 'bun install' if package-lock.json comes back
+package-lock.json
+
+# artifacts
+npm-debug.log*
+**/*.trace
+**/*.zip
+**/*.tar.gz
+**/*.tgz
+**/*.log
+**/*.bun

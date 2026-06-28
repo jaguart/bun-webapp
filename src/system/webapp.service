@@ -1,0 +1,20 @@
+# bun-webapp systemd service file
+# Note that .env determines production vs development - NODE_ENV is ignored
+# To install: bun run systemd
+
+[Unit]
+Description=bun-webapp
+After=network.target
+
+[Service]
+Type=simple
+SyslogIdentifier=bun-webapp
+WorkingDirectory=/srv/bun-webapp
+ExecStart=bun run app
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,45 @@
+{
+  "name": "webapp",
+  "version": "0.0.1",
+  "description": "A bun + Elysia web app with Svelte 5 and SQLite",
+  "author": "",
+  "homepage": "",
+  "repository": "github:jaguart/bun-webapp",
+  "scripts": {
+    "setup": "bun bin/setup-app.ts",
+    "dev": "bun bin/set-env.ts development && bun --watch src/index.ts & bunx vite",
+    "prod": "bun bin/set-env.ts production && bun src/index.ts",
+    "app": "bun src/index.ts",
+    "build": "bun bin/build-app.ts",
+    "bump": "bun bin/bump-app.ts",
+    "deploy": "bun bin/deploy-app.ts --",
+    "init-db": "bun bin/init-db.ts",
+    "reset-db": "bun bin/reset-db.ts",
+    "systemd": "bun bin/enable-systemd.ts",
+    "nginx": "bun bin/enable-nginx.ts",
+    "ui:vue": "bun bin/set-flavour.ts ui vue 3 && rsync -a --delete src/public-vue3/ public/",
+    "ui:svelte": "bun bin/set-flavour.ts ui svelte && vite build",
+    "build:ui": "bun bin/build-ui.ts",
+    "ui:dev": "vite",
+    "test": "bun test test/unit",
+    "test:integration": "bun test --preload ./test/integration/helpers/db.ts test/integration",
+    "test:all": "bun run test && bun run test:integration"
+  },
+  "dependencies": {
+    "@elysiajs/static": "^1.4.10",
+    "elysia": "latest",
+    "http-status-codes": "^2.3.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.1",
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "bun-types": "latest",
+    "svelte": "^5.56.4",
+    "vite": "^8.1.0"
+  },
+  "module": "src/index.ts",
+  "ui": {
+    "name": "svelte",
+    "version": "5.56.4"
+  }
+}

@@ -1,0 +1,184 @@
+/* style.css - centralised styles for the site */
+
+/* biome-ignore format: keep alignment */
+:root {
+  --bg:           hsl(0, 0%, 97%);
+  --surface:      hsl(0, 0%, 100%);
+  --hover:        hsla(0, 0%, 0%, 0.40);
+  --text:         hsla(0, 0%, 29%, 0.90);
+  --text-dim:     hsla(0, 0%, 29%, 0.65);
+  --heading:      hsl(0, 0%, 0%);
+  --border:       hsla(0, 0%, 0%, 0.10);
+  --shadow:       hsla(0, 0%, 0%, 0.10);
+  --shadow-deep:  hsla(0, 0%, 0%, 0.20);
+  --row-hover:    hsl(0, 0%, 90%);
+  --error:        hsl(0, 100%, 27%);
+  /* 25% increments */
+  --sp-sm:        0.64em;
+  --sp-lg:        1.25em;
+}
+
+/* this adds the height of fixed-position elements making the body too high, hmmm
+html,
+body {
+  height: 100dvh;
+}
+*/
+
+body {
+  margin: 0;
+  padding-top: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg);
+  font-family:
+    avenir next,
+    helvetica neue,
+    Arial,
+    sans-serif,
+    apple color emoji,
+    segoe ui emoji,
+    segoe ui symbol;
+}
+
+code {
+  font-family: inherit;
+  font-size: 90%;
+  background-color: var(--row-hover);
+  padding-inline: 4px;
+}
+
+.nav {
+  display: flex;
+  gap: 1em;
+  padding: var(--sp-sm) var(--sp-lg);
+  background-color: var(--surface);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: small;
+  letter-spacing: 1px;
+}
+
+.nav a:hover {
+  color: var(--heading);
+}
+
+.box {
+  color: var(--text);
+  background-color: var(--surface);
+  letter-spacing: 1px;
+  padding: var(--sp-lg);
+  min-width: 30em;
+  border-radius: var(--sp-sm);
+}
+
+.shade {
+  box-shadow: 0 1em 4em 0 var(--shadow);
+}
+
+.meta {
+  font-family: monospace;
+  color: var(--text-dim);
+  background-color: var(--surface);
+  padding: var(--sp-sm) var(--sp-lg);
+  border-radius: var(--sp-sm);
+  border: none;
+}
+
+.box > h1 {
+  color: var(--heading);
+  margin-top: var(--sp-sm);
+}
+.box > h1,
+.box > p {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  padding: 1em;
+  border-bottom: 1px solid var(--border);
+}
+
+.row:hover {
+  background-color: var(--row-hover);
+}
+
+.row:last-of-type {
+  border-bottom: none;
+}
+
+.row:last-of-type:hover {
+  background-color: initial;
+}
+
+.text {
+  flex-grow: 1;
+  align-self: center;
+}
+
+.text.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.done-wrapper {
+  margin-right: var(--sp-lg);
+  display: flex;
+  align-items: center;
+}
+
+.delete-wrapper {
+  margin-left: var(--sp-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.delete-wrapper input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: var(--sp-lg);
+  height: var(--sp-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-wrapper input[type="checkbox"]::after {
+  content: "🗑";
+  font-size: 2em;
+  opacity: 0.4;
+}
+
+.delete-wrapper input[type="checkbox"]:hover::after {
+  opacity: 1;
+}
+
+.text-input {
+  flex-grow: 1;
+  padding: var(--sp-sm);
+}
+
+.text-input::placeholder {
+  opacity: 0.4;
+}
+
+.error-box {
+  margin-top: var(--sp-lg);
+  color: var(--error);
+}
+
+.error-header {
+  margin-bottom: var(--sp-sm);
+}
+
+.error-body {
+  font-size: small;
+}
