@@ -101,8 +101,15 @@ bun run nginx                          # link + test src/system/my-app.example.n
 sudo systemctl restart nginx
 ```
 
+
 ## Auth model
 
 Cookie-based sessions (`httpOnly`, `secure`, `sameSite=lax`, 7-day expiry).
 Capabilities are a semicolon-separated string on the user row, e.g. `admin;editor`.
 The `admin` capability bypasses per-user data isolation on the todos routes.
+
+## Credits
+
+Inspired by the [FoalTS Simple Todo List tutorial](https://foalts.org/docs/tutorials/simple-todo-list/1-installation).
+
+AI assistance by [Claude Code](https://claude.ai/code) (claude-sonnet-4-6).
