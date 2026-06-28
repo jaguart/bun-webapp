@@ -13,6 +13,9 @@ export type User = {
 };
 
 export const users = {
+  all: (): User[] =>
+    store.query("SELECT * FROM user ORDER BY id").all() as User[],
+
   findByEmail: (email: string): User | null =>
     store
       .query("SELECT * FROM user WHERE email = $email")
