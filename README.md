@@ -5,8 +5,6 @@ A full-stack web app template using Bun, Elysia, SQLite, and Svelte 5 (or Vue 3)
 ```bash
 bun create jaguart/bun-webapp my-app
 cd my-app
-bun bin/seed-user.ts --name "Your Name" --email you@example.com --password secret
-bun run dev
 ```
 
 `bun create` runs `create.ts` automatically after scaffolding, which:
